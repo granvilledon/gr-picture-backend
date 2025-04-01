@@ -26,9 +26,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author granvilledon
+ * @author 李鱼皮
  * @description 针对表【user(用户)】的数据库操作Service实现
- * @createDate 2025-4-01 17:38:03
+ * @createDate 2024-12-09 20:03:03
  */
 @Service
 @Slf4j
@@ -118,7 +118,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     @Override
     public String getEncryptPassword(String userPassword) {
         // 加盐，混淆密码
-        final String SALT = "yupi";
+        final String SALT = "granvilledon";
         return DigestUtils.md5DigestAsHex((SALT + userPassword).getBytes());
     }
 
@@ -219,6 +219,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         queryWrapper.like(StrUtil.isNotBlank(userProfile), "userProfile", userProfile);
         queryWrapper.orderBy(StrUtil.isNotEmpty(sortField), sortOrder.equals("ascend"), sortField);
         return queryWrapper;
+    }
+
+    @Override
+    public boolean isAdmin(User user) {
+        return user != null && UserRoleEnum.ADMIN.getValue().equals(user.getUserRole());
     }
 }
 
