@@ -1,4 +1,4 @@
-package com.granvilledon.grpicture.exception;
+package com.granvilledon.grpicturebackend.exception;
 
 import lombok.Getter;
 

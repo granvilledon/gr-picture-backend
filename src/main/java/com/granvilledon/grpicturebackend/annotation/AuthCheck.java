@@ -1,4 +1,4 @@
-package com.granvilledon.grpicture.annotation;
+package com.granvilledon.grpicturebackend.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

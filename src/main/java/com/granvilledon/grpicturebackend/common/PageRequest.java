@@ -1,4 +1,4 @@
-package com.granvilledon.grpicture.common;
+package com.granvilledon.grpicturebackend.common;
 
 import lombok.Data;
 

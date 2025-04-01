@@ -1,4 +1,4 @@
-package com.granvilledon.grpicture.exception;
+package com.granvilledon.grpicturebackend.exception;
 
 /**
  * 异常处理工具类

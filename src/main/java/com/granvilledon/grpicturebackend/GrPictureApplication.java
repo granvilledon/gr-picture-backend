@@ -1,4 +1,4 @@
-package com.granvilledon.grpicture;
+package com.granvilledon.grpicturebackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
