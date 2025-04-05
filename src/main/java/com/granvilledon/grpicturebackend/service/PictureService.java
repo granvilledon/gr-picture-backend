@@ -3,10 +3,7 @@ package com.granvilledon.grpicturebackend.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.granvilledon.grpicturebackend.model.dto.picture.PictureQueryRequest;
-import com.granvilledon.grpicturebackend.model.dto.picture.PictureReviewRequest;
-import com.granvilledon.grpicturebackend.model.dto.picture.PictureUploadByBatchRequest;
-import com.granvilledon.grpicturebackend.model.dto.picture.PictureUploadRequest;
+import com.granvilledon.grpicturebackend.model.dto.picture.*;
 import com.granvilledon.grpicturebackend.model.entity.Picture;
 import com.granvilledon.grpicturebackend.model.entity.User;
 import com.granvilledon.grpicturebackend.model.vo.PictureVO;
@@ -14,9 +11,9 @@ import com.granvilledon.grpicturebackend.model.vo.PictureVO;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author granvilledon
+* @author granvilledon 
  * @description 针对表【picture(图片)】的数据库操作Service
- * @createDate 2025-4-5 12:57:51
+ * @createDate 2025-4-5 15:45:51
  */
 public interface PictureService extends IService<Picture> {
 
@@ -98,4 +95,28 @@ public interface PictureService extends IService<Picture> {
      * @param oldPicture
      */
     void clearPictureFile(Picture oldPicture);
+
+    /**
+     * 删除图片
+     *
+     * @param pictureId
+     * @param loginUser
+     */
+    void deletePicture(long pictureId, User loginUser);
+
+    /**
+     * 编辑图片
+     *
+     * @param pictureEditRequest
+     * @param loginUser
+     */
+    void editPicture(PictureEditRequest pictureEditRequest, User loginUser);
+
+    /**
+     * 校验空间图片的权限
+     *
+     * @param loginUser
+     * @param picture
+     */
+    void checkPictureAuth(User loginUser, Picture picture);
 }
