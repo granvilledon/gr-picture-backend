@@ -14,9 +14,9 @@ import com.granvilledon.grpicturebackend.model.vo.PictureVO;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author 李鱼皮
+ * @author granvilledon
  * @description 针对表【picture(图片)】的数据库操作Service
- * @createDate 2024-12-11 20:45:51
+ * @createDate 2025-4-5 12:57:51
  */
 public interface PictureService extends IService<Picture> {
 
@@ -30,7 +30,7 @@ public interface PictureService extends IService<Picture> {
     /**
      * 上传图片
      *
-     * @param inputSource 文件输入源
+     * @param inputSource          文件输入源
      * @param pictureUploadRequest
      * @param loginUser
      * @return
@@ -90,6 +90,12 @@ public interface PictureService extends IService<Picture> {
      * @return 成功创建的图片数
      */
     Integer uploadPictureByBatch(PictureUploadByBatchRequest pictureUploadByBatchRequest,
-                         User loginUser);
+                                 User loginUser);
 
+    /**
+     * 清理图片文件
+     *
+     * @param oldPicture
+     */
+    void clearPictureFile(Picture oldPicture);
 }
