@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author granvilledon 
+ * @author granvilledon
  */
 @Slf4j
 @RestController

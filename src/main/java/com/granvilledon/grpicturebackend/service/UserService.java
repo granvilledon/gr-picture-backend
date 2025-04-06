@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
-* @author granvilledon 
+ * @author granvilledon
  * @description 针对表【user(用户)】的数据库操作Service
- * @createDate 2025-4-5 15:03:03
+ * @createDate 2025-04-06 10:07:34
  */
 public interface UserService extends IService<User> {
 

@@ -9,11 +9,12 @@ import com.granvilledon.grpicturebackend.model.entity.User;
 import com.granvilledon.grpicturebackend.model.vo.PictureVO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
-* @author granvilledon 
+ * @author granvilledon
  * @description 针对表【picture(图片)】的数据库操作Service
- * @createDate 2025-4-5 15:45:51
+ * @createDate 2025-04-06 10:07:34
  */
 public interface PictureService extends IService<Picture> {
 
@@ -119,4 +120,22 @@ public interface PictureService extends IService<Picture> {
      * @param picture
      */
     void checkPictureAuth(User loginUser, Picture picture);
+
+    /**
+     * 根据颜色搜索图片
+     *
+     * @param spaceId
+     * @param picColor
+     * @param loginUser
+     * @return
+     */
+    List<PictureVO> searchPictureByColor(Long spaceId, String picColor, User loginUser);
+
+    /**
+     * 批量编辑图片
+     *
+     * @param pictureEditByBatchRequest
+     * @param loginUser
+     */
+    void editPictureByBatch(PictureEditByBatchRequest pictureEditByBatchRequest, User loginUser);
 }

@@ -1,12 +1,10 @@
 package com.granvilledon.grpicturebackend.model.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 图片
@@ -18,13 +16,18 @@ public class Picture implements Serializable {
     /**
      * id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
 
     /**
      * 图片 url
      */
     private String url;
+
+    /**
+     * 缩略图 url
+     */
+    private String thumbnailUrl;
 
     /**
      * 图片名称
@@ -72,29 +75,19 @@ public class Picture implements Serializable {
     private String picFormat;
 
     /**
+     * 图片主色调
+     */
+    private String picColor;
+
+    /**
      * 创建用户 id
      */
     private Long userId;
 
     /**
-     * 创建时间
+     * 空间 id
      */
-    private Date createTime;
-
-    /**
-     * 编辑时间
-     */
-    private Date editTime;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
-
-    /**
-     * 是否删除
-     */
-    private Integer isDelete;
+    private Long spaceId;
 
     /**
      * 审核状态：0-待审核; 1-通过; 2-拒绝
@@ -117,19 +110,25 @@ public class Picture implements Serializable {
     private Date reviewTime;
 
     /**
-     * 缩略图 url
+     * 创建时间
      */
-    private String thumbnailUrl;
+    private Date createTime;
 
     /**
-     * 空间 id（为空表示公共空间）
+     * 编辑时间
      */
-    private Long spaceId;
+    private Date editTime;
 
     /**
-     * 图片主色调
+     * 更新时间
      */
-    private String picColor;
+    private Date updateTime;
+
+    /**
+     * 是否删除
+     */
+    @TableLogic
+    private Integer isDelete;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

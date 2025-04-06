@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 图片上传请求
  *
- * @author granvilledon 
+ * @author granvilledon
  */
 @Data
 public class PictureUploadRequest implements Serializable {

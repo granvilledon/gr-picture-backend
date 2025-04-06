@@ -12,9 +12,9 @@ import com.granvilledon.grpicturebackend.model.vo.SpaceVO;
 import javax.servlet.http.HttpServletRequest;
 
 /**
-* @author granvilledon 
+ * @author granvilledon
  * @description 针对表【space(空间)】的数据库操作Service
- * @createDate 2025-4-5 15:53:34
+ * @createDate 2025-04-06 10:07:34
  */
 public interface SpaceService extends IService<Space> {
 
