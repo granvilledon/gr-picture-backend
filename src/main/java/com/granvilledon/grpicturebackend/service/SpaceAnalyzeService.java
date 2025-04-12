@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * @author granvilledon
- * @createDate 2025-04-12 11:38:03
  */
 public interface SpaceAnalyzeService extends IService<Space> {
 

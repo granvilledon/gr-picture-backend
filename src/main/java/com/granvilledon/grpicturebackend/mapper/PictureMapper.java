@@ -6,7 +6,6 @@ import com.granvilledon.grpicturebackend.model.entity.Picture;
 /**
 * @author granvilledon
 * @description 针对表【picture(图片)】的数据库操作Mapper
- * @createDate 2025-04-12 11:38:03
 * @Entity com.granvilledon.grpicturebackend.model.entity.Picture
 */
 public interface PictureMapper extends BaseMapper<Picture> {

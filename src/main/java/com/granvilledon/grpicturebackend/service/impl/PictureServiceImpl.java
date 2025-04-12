@@ -53,9 +53,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * @author granvilledon <a href="https://www.github.com/granvilledon/gr-picture">编程导航原创项目</a>.
+ * @author granvilledon
  * @description 针对表【picture(图片)】的数据库操作Service实现
- * @createDate 2025-04-12 11:38:03
  */
 @Slf4j
 @Service
@@ -418,7 +417,7 @@ public class PictureServiceImpl extends ServiceImpl<PictureMapper, Picture>
                 continue;
             }
             // 处理图片的地址，防止转义或者和对象存储冲突的问题
-            // codefather.cn?granvilledon=dog，应该只保留 codefather.cn
+            // codefather.cn?yupi=dog，应该只保留 codefather.cn
             int questionMarkIndex = fileUrl.indexOf("?");
             if (questionMarkIndex > -1) {
                 fileUrl = fileUrl.substring(0, questionMarkIndex);

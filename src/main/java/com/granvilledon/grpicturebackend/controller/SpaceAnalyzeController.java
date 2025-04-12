@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * @author granvilledon <a href="https://www.github.com/granvilledon/gr-picture">编程导航原创项目</a>.
+ * @author granvilledon
  */
 @Slf4j
 @RestController

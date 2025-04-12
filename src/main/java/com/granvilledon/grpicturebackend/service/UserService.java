@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * @author granvilledon
  * @description 针对表【user(用户)】的数据库操作Service
- * @createDate 2025-04-12 11:38:03
  */
 public interface UserService extends IService<User> {
 
@@ -99,4 +98,9 @@ public interface UserService extends IService<User> {
      * @return
      */
     boolean isAdmin(User user);
+
+    /**
+     * 用户兑换会员（会员码兑换）
+     */
+    boolean exchangeVip(User user, String vipCode);
 }

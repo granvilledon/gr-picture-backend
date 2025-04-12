@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 图片上传请求
  *
- * @author granvilledon <a href="https://www.github.com/granvilledon/gr-picture">编程导航原创项目</a>.
+ * @author granvilledon
  */
 @Data
 public class PictureUploadRequest implements Serializable {

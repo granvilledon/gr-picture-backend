@@ -49,7 +49,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author granvilledon <a href="https://www.github.com/granvilledon/gr-picture">编程导航原创项目</a>.
+ * @author granvilledon
  */
 @Slf4j
 @RestController
@@ -270,7 +270,7 @@ public class PictureController {
         // 构建缓存的 key
         String queryCondition = JSONUtil.toJsonStr(pictureQueryRequest);
         String hashKey = DigestUtils.md5DigestAsHex(queryCondition.getBytes());
-        String cacheKey = String.format("grpicture:listPictureVOByPage:%s", hashKey);
+        String cacheKey = String.format("yupicture:listPictureVOByPage:%s", hashKey);
         // 1. 先从本地缓存中查询
         String cachedValue = LOCAL_CACHE.getIfPresent(cacheKey);
         if (cachedValue != null) {
