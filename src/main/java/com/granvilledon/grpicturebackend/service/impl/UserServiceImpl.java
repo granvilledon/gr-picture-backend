@@ -9,6 +9,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.granvilledon.grpicturebackend.constant.UserConstant;
 import com.granvilledon.grpicturebackend.exception.BusinessException;
 import com.granvilledon.grpicturebackend.exception.ErrorCode;
+import com.granvilledon.grpicturebackend.manager.auth.StpKit;
 import com.granvilledon.grpicturebackend.mapper.UserMapper;
 import com.granvilledon.grpicturebackend.model.dto.user.UserQueryRequest;
 import com.granvilledon.grpicturebackend.model.entity.User;
@@ -28,7 +29,7 @@ import java.util.stream.Collectors;
 /**
  * @author granvilledon
  * @description 针对表【user(用户)】的数据库操作Service实现
- * @createDate 2025-4-06 20:03:03
+ * @createDate 2025-04-12 11:38:03
  */
 @Service
 @Slf4j
@@ -106,6 +107,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         }
         // 4. 保存用户的登录态
         request.getSession().setAttribute(UserConstant.USER_LOGIN_STATE, user);
+        // 记录用户登录态到 Sa-token，便于空间鉴权时使用，注意保证该用户信息与 SpringSession 中的信息过期时间一致
+        StpKit.SPACE.login(user.getId());
+        StpKit.SPACE.getSession().set(UserConstant.USER_LOGIN_STATE, user);
         return this.getLoginUserVO(user);
     }
 

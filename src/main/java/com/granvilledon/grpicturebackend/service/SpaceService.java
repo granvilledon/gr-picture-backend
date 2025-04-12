@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @author granvilledon
  * @description 针对表【space(空间)】的数据库操作Service
- * @createDate 2025-4-06 20:03:03
+ * @createDate 2025-04-12 11:38:03
  */
 public interface SpaceService extends IService<Space> {
 

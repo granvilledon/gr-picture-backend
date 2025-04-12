@@ -9,8 +9,8 @@ import com.granvilledon.grpicturebackend.model.vo.space.analyze.*;
 import java.util.List;
 
 /**
- * @author gnvilledon
- * @createDate 2025-04-08 12:50:34
+ * @author granvilledon
+ * @createDate 2025-04-12 11:38:03
  */
 public interface SpaceAnalyzeService extends IService<Space> {
 
